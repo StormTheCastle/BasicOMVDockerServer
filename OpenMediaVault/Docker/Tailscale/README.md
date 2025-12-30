@@ -34,3 +34,10 @@ _Required:_ Make sure you know:
   - Subsequent updates: `sudo docker exec -it tailscale tailscale up --reset --advertise-exit-node`
   
 You can add --exit-node-allow-lan-access=true so if you are doing tailscale on computer and want to access to local
+
+## Test
+- If you open your tailscale admin account, you should now be able to see the raspberry pi show up as a machine in the list
+- Make sure to also accept the new pi machine as an Exit Node and probably disable the expiry as well
+- Ping the IP address associated with the machine as listed under the tailscale admin screen and make sure there's a response
+- You can now use the IP address to access the OMV web gui the same way the local IP can be used
+- Other containers like Jellyfin will now be able to use that same IP to access the server even when you are outside of the local network (as long as your tailscale is on)
