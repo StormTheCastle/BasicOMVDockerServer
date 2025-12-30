@@ -35,3 +35,9 @@ On your main computer:
    7. `wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash`
       - Wait for this to finish and don't close Putty in the meantime
 6. OpenMediaVault should now be accessible using the web GUI. Open the pi's IP address in your browser. The default user/password should be `admin/openmediavault`
+
+## Next Steps
+You can now move onto setting up OMV and Docker. OMV provides a [new user guide](https://wiki.omv-extras.org/doku.php?id=omv7:new_user_guide) and a [docker guide](https://wiki.omv-extras.org/doku.php?id=omv7:docker_in_omv) which I also summarize.
+1. [Basic Start](OpenMediaVault/Basic/README.md)
+2. [Docker](OpenMediaVault/Docker/README.md)
+   - This will aggregate steps for setting up Docker along with tailscale, jellyfin, and calibre-web. These also will exist as solo sub-options if preferred.
