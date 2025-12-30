@@ -72,7 +72,8 @@ This will allow using the IP address and Windows file explorer network location 
 2. Verify that typing in the Windows explorer bar (or using right-click This PC > Add network location) lets you access `\\<IP Address>\dockerdata` and that you may add folders and data directly to the drive.
    - If you have trouble with this, check that your user has the appropriate security for the folders.
 
-At this point, you are ready to add compose containers. Currently available:
+At this point, you are ready to add compose containers. The basic steps will be: Services > Compose > Add / Add from Example > Fill out paths and variables > (Pull only first time setup or update) / Up. More detailed steps per container below:
+
 - [Tailscale](OpenMediaVault/Docker/Tailscale/README.md)
 - [Jellyfin](OpenMediaVault/Docker/Jellyfin/README.md)
 - [Calibre-web](OpenMediaVault/Docker/Calibre-web/README.md)
