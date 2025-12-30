@@ -81,5 +81,5 @@ In my examples, for instance, appdata will be referred to using /dockerappconfig
 More detailed steps per container below:
 - [Tailscale](/OpenMediaVault/Docker/Tailscale/README.md)
 - [Jellyfin](/OpenMediaVault/Docker/Jellyfin/README.md)
-- [Calibre-web](/OpenMediaVault/Docker/Calibre-web/README.md)
+- [Calibre-web](/OpenMediaVault/Docker/Calibre/README.md)
 - [Pihole](/OpenMediaVault/Docker/Pihole/README.md)
