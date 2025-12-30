@@ -1,0 +1,19 @@
+---
+# Date: 2025-06-01
+# https://github.com/linuxserver/docker-calibre-web
+services:
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web:latest
+    container_name: calibre-web
+    environment:
+      - PUID=<TODO user UID>
+      - PGID=<TODO group GID>
+      - TZ=<TODO timezone ex. America/Chicago>
+      # - DOCKER_MODS=ghcr.io/linuxserver/mods:universal-calibre #optional
+      # - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
+    volumes:
+      - /<TODO dockerappconfig path>/calibre-web:/config
+      - /<TODO dockerdata path>/calibre-lib:/books
+    ports:
+      - 8083:8083
+    restart: unless-stopped
