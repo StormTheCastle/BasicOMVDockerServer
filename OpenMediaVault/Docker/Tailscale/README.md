@@ -34,5 +34,3 @@ _Required:_ Make sure you know:
   - Subsequent updates: `sudo docker exec -it tailscale tailscale up --reset --advertise-exit-node`
   
 You can add --exit-node-allow-lan-access=true so if you are doing tailscale on computer and want to access to local
-
-If 
