@@ -31,7 +31,49 @@ This is to create the folders docker uses for data access, etc. Storage > Shared
 - dockerdata  (or "data") - main data of the containers (ex. the music/movies)
   - permissions: admin read/write | Users read/write | Others read only
   - file system - the larger/main data system disk
-  - _Note:_ You can split this up further with subfolders for data access per user. For example, I made a dockerdata/media folder for jellyfin and dockerdata/books for calibre.
+  - _Note:_ You can split this up further with subfolders for data access per user. For example, I made a dockerdata/media folder for jellyfin and dockerdata/books for calibre. After the following two sections, you should also be able to access the file system from the file explorer and create subfolders in that way too. We will want to do that later as described in future steps.
 
+## Docker Compose Settings
+Services > Compose > Settings
+
+1. Shared Folder: `dockerappconfig` (appdata)
+```
+Owner: root | group: root
+permissions: admin read/write | users/others: no access
+```
+2. Data Shared Folder: `dockerdata` (data)
+3. Backup Shared Folder: `dockerbackup` (backup_compose)
+4. Docker Config Shared Folder: `dockercomposeconfig` (docker)
+5. Save and apply
+6. Return to Services > Compose > Settings and click the Reinstall Docker button on the bottom
 
 ## Users and Groups
+Used for determining access. Users > Users/Groups. For each of your containers/services it's good practice to create a new user for them (or a group if needed).
+
+_Note:_ Before starting, click the little grid/table by the search and make sure the UID/GID are visible. Keep track of user UID and group GID. (If you aren't doing anything with groups, the default "users" GUID should be used, which will probably be "100")
+	
+1. Create the users and groups and assign the correct permissions. Ex. Create a user "jellyfin"
+   - Add password
+   - Shell: /usr/sbin/nologin
+   - Groups: Users
+   - Disallow account modification
+   - Save/Apply
+2. Repeat the above for however many users you need.
+3. For each, click on row and click the folder/"shared folder permissions" and allow read/write access to the shared folders they should be allowed in.
+(This can also be done in Storage > Shared Folders and clicking the folder/"shared folder permissions")
+   - Usually dockerappconfig and dockerdata (or the subfolder)
+
+# Manual File Access
+This will allow using the IP address and Windows file explorer network location traversal to view and edit files.
+
+1. Services > SMB/CIFS
+   - Settings: enable sharing
+   - Shares: add lines for each folder to share and change to Inherit Permissions
+2. Verify that typing in the Windows explorer bar (or using right-click This PC > Add network location) lets you access `\\<IP Address>\dockerdata` and that you may add folders and data directly to the drive.
+   - If you have trouble with this, check that your user has the appropriate security for the folders.
+
+At this point, you are ready to add compose containers. Currently available:
+- [Tailscale](OpenMediaVault/Docker/Tailscale/README.md)
+- [Jellyfin](OpenMediaVault/Docker/Jellyfin/README.md)
+- [Calibre-web](OpenMediaVault/Docker/Calibre-web/README.md)
+- [Pihole](OpenMediaVault/Docker/Pihole/README.md)
