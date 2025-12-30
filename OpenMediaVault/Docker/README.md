@@ -79,7 +79,7 @@ Before you start, make sure you go to your shared files and keep track of the ab
 In my examples, for instance, appdata will be referred to using /dockerappconfig and the data folder will look like /srv/dev-disk-by-uuid-***/dockerdata
 
 More detailed steps per container below:
-- [Tailscale](OpenMediaVault/Docker/Tailscale/README.md)
-- [Jellyfin](OpenMediaVault/Docker/Jellyfin/README.md)
-- [Calibre-web](OpenMediaVault/Docker/Calibre-web/README.md)
-- [Pihole](OpenMediaVault/Docker/Pihole/README.md)
+- [Tailscale](/OpenMediaVault/Docker/Tailscale/README.md)
+- [Jellyfin](/OpenMediaVault/Docker/Jellyfin/README.md)
+- [Calibre-web](/OpenMediaVault/Docker/Calibre-web/README.md)
+- [Pihole](/OpenMediaVault/Docker/Pihole/README.md)
