@@ -1,0 +1,28 @@
+---
+# Date: 2025-06-01
+# https://hub.docker.com/r/tailscale/tailscale
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale-pi
+    privileged: true
+    hostname: tailscale-dockerpi # This will become the tailscale device name
+    network_mode: host # Use host network
+    environment:
+      - TS_AUTHKEY=<TODO paste key here>          # need key generate from tail net server
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS-USERSPACE=0            # Disable userspace networking, use kernel networking
+      - TS_EXTRA_ARGS=--advertise-exit-node
+      - TS_ROUTES=<TODO paste IP here>/24        # Docker IP Address where tailscale install
+      - TS_HOSTNAME=<TODO Name here>       # Specify the name you will see in tailscale panel
+      - TS_DEBUG_FIREWALL_MODE=nftables
+    volumes:
+      - <TODO dockerdata path here>/tailscale/var_lib:/var/lib/tailscale # State data will be stored in this directory
+      - /dev/net/tun:/dev/net/tun # Required for tailscale to work
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    cap_add: # Required for tailscale to work
+      - SYS_MODULE
+      - NET_ADMIN
+      - NET_RAW # Required network permissions
+    command: tailscaled
+    restart: unless-stopped # Automatically restart
