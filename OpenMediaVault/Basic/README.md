@@ -26,7 +26,7 @@ If you have extra storage disks you want to make available or want to add more a
 	 2. Save and apply
    3. Verify the available space looks good and take note of the device names and which disk it belongs to (ex. /dev/sda1 for your boot drive)
 	 4. Repeat this for each of your additional storage devices
-3. Storage > Shared Folders will be where you create the folder system of data. Docker follows an expected pattern so we will do this later in the [Docker Data Folders section](OpenMediaVault/Docker/README.md)
+3. Storage > Shared Folders will be where you create the folder system of data. Docker follows an expected pattern so we will do this later in the [Docker Data Folders section](/OpenMediaVault/Docker/README.md)
 
 ### Monitoring
 - Storage > S.M.A.R.T
@@ -34,4 +34,4 @@ If you have extra storage disks you want to make available or want to add more a
 	- Devices > Select the disk > Edit > Enable Monitoring > Save (for each device)
 
 ## Users and Groups
-Users > Users/Groups will be used to control access. You can create one generic "appuser" with general access to data files to be shared by all the containers or you can make one for each. The steps here will have a user for each container and will be described in more detail in the [Docker Users and Groups section](OpenMediaVault/Docker/README.md)
+Users > Users/Groups will be used to control access. You can create one generic "appuser" with general access to data files to be shared by all the containers or you can make one for each. The steps here will have a user for each container and will be described in more detail in the [Docker Users and Groups section](/OpenMediaVault/Docker/README.md)
