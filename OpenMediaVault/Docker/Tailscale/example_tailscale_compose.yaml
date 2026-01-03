@@ -17,7 +17,7 @@ services:
       - TS_HOSTNAME=<TODO Name here>       # Specify the name you will see in tailscale panel
       - TS_DEBUG_FIREWALL_MODE=nftables
     volumes:
-      - <TODO dockerdata path here>/tailscale/var_lib:/var/lib/tailscale # State data will be stored in this directory
+      - <TODO dockerappconfig path here>/tailscale/var_lib:/var/lib/tailscale # State data will be stored in this directory
       - /dev/net/tun:/dev/net/tun # Required for tailscale to work
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
     cap_add: # Required for tailscale to work
