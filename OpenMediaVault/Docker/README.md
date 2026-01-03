@@ -101,7 +101,9 @@ Schedule consistent updates and backups of your plugins/containers. (Services > 
 Note: To force a volume to be included or excluded in the backup, type # BACKUP, # SKIP BACKUP at the end of the line that defines that volume in Compose files as described in the detailed steps sections.
 
 Ex. In Jellyfin, you can skip some volume backups with:
+```
     volumes:
       - /jellyfin/config:/config # BACKUP
       - /jellyfin/cache:/cache # SKIP BACKUP
       - /MyLib:/data/movies # SKIP BACKUP
+```
