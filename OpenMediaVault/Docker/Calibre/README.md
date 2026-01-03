@@ -3,7 +3,7 @@
 _Required:_ Make sure you know:
 - Your container app user's PUID
 - Your associated group GID (or container app user PGID)
-- Your timezone marker
+- Your timezone marker (Note: This seems to have some trouble parsing spaces - ie. America/Los Angeles doesn't work directly. I haven't tested, but try wrapping in ' marks if you need to.)
 - Your appdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
 - Your dockerdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
 
