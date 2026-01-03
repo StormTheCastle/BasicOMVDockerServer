@@ -1,8 +1,8 @@
 # Calibre-web Container
 
 _Required:_ Make sure you know:
-- Your calibre user's PUID
-- Your associated group GID (or calibre user PGID)
+- Your container app user's PUID
+- Your associated group GID (or container app user PGID)
 - Your timezone marker
 - Your appdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
 - Your dockerdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
@@ -15,7 +15,7 @@ _Required:_ Make sure you know:
     - Plug in your user id under PUID
     - Plug in your group id under PGID
     - Plug in your time zone under TZ
-  - The volumes data paths might work as-is but I prefer to update to the absolute path. The left-hand side should be the path as docker sees it and the right-hand side will be how jellyfin can see it.
+  - The volumes data paths might work as-is but I prefer to update to the absolute path. The left-hand side should be the path as docker sees it and the right-hand side will be how the container can see it.
   - **Note:** To make sure I have access to the folder data, I created the calibre folder in /dockerdata
     - Ex. I had a path to /dockerdata/books:/books. That way the container would find it automatically and not try to create its own.
 - Save
