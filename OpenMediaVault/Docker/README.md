@@ -83,3 +83,25 @@ More detailed steps per container below:
 - [Jellyfin](/OpenMediaVault/Docker/Jellyfin/README.md)
 - [Calibre-web](/OpenMediaVault/Docker/Calibre/README.md)
 - [Pihole](/OpenMediaVault/Docker/Pihole/README.md)
+
+# Updates
+Schedule consistent updates and backups of your plugins/containers. (Services > Compose > Schedule)
+
+1. Add
+2. Check the "Enabled" checkbox
+3. Leave the Filter blank if you want to update it all
+4. Leave File excludes blank if you want to update all
+5. Add Action Types (I just did all - Maintenance, Backup, Update, Prune)
+6. Leave Scripts blank
+7. Schedule - set the schedule to run. Default Weekly should be good enough
+8. Opt. Enable Verbose
+9. Save
+10. Run to check for errors
+
+Note: To force a volume to be included or excluded in the backup, type # BACKUP, # SKIP BACKUP at the end of the line that defines that volume in Compose files as described in the detailed steps sections.
+
+Ex. In Jellyfin, you can skip some volume backups with:
+    volumes:
+      - /jellyfin/config:/config # BACKUP
+      - /jellyfin/cache:/cache # SKIP BACKUP
+      - /MyLib:/data/movies # SKIP BACKUP
