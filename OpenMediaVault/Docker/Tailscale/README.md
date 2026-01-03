@@ -2,7 +2,7 @@
 
 _Required:_ Make sure you know:
 - Your pi's IP Address (you probably want to go to your router and make it a static value)
-- Your dockerdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
+- Your dockerappconfig/appdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
 - Make sure your SSH user security includes the "docker" group (Users > Users)
 
 ## Tailscale Account
@@ -21,7 +21,7 @@ _Required:_ Make sure you know:
   - Environment values:
     - Plug in your key under TS_AUTHKEY
     - Change TS-ROUTES to actual IP beginning
-  - CHANGE_TO_COMPOSE_DATA_PATH should work as-is but I prefer to update to the absolute path
+  - CHANGE_TO_COMPOSE_DATA_PATH should work as-is but I prefer to update to the absolute path. I pointed to /dockerappconfig
 	- Optionally adjust values like the container name (ex. tailscale-pi)
 - Save
 - Click on the new line in the Services > Compose > Files table and click the "Pull" icon
