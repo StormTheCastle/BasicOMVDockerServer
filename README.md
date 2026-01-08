@@ -1,9 +1,9 @@
 # BasicOMVDockerServer
-Steps for setting up an OMV Server with basic functionality and documenting some of the gatchas that bothered me.
+Steps for setting up an OMV Server with basic functionality and documenting some of the gotchas that bothered me.
 
 ## Requirements
 - Raspberry pi
-- Data storage (preferred: SSD and using 2 of them)
+- Data storage (preferred: SSD and 2+ of them)
   - One will be used for booting
   - It is best practice to have a second one for storing most of the data, but you can also store it all on the boot drive too
   - Opt. If you want to use the boot drive, make sure to format it as EXT4 prior to doing anything else. Without formatting it, the partition OMV is able to access seems to be limited
