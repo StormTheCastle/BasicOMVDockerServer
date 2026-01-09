@@ -40,4 +40,4 @@ On your main computer:
 You can now move onto setting up OMV and Docker. OMV provides a [new user guide](https://wiki.omv-extras.org/doku.php?id=omv7:new_user_guide) and a [docker guide](https://wiki.omv-extras.org/doku.php?id=omv7:docker_in_omv) which I also summarize.
 1. [Basic Start](OpenMediaVault/Basic/README.md)
 2. [Docker](OpenMediaVault/Docker/README.md)
-   - This will aggregate steps for setting up Docker along with tailscale, jellyfin, and calibre-web. These also will exist as solo sub-options if preferred.
+   - This will aggregate steps for setting up Docker along with some containers for things like tailscale and jellyfin. These also will exist as solo sub-options if preferred.
