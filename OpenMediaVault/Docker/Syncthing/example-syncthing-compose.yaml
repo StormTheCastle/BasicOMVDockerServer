@@ -1,0 +1,22 @@
+---
+# Date: 2025-06-01
+# https://hub.docker.com/r/linuxserver/syncthing
+services:
+  syncthing:
+    image: lscr.io/linuxserver/syncthing:latest
+    container_name: syncthing
+    hostname: syncthing #optional
+    environment:
+      - PUID=<TODO user UID>
+      - PGID=<TODO group GID>
+      - TZ=<TODO timezone ex. America/Chicago>
+    volumes:
+      - /<TODO dockerappconfig path>/syncthing/config:/config
+      - /<TODO dockerdata path>/media:/mediadata    # point to whatever data you want
+      - /<TODO dockerdata path>/syncdata:/syncdata  # optional - point to whatever data you want
+    ports:
+      - 8384:8384    # Web UI
+      - 22000:22000/tcp # Syncthing discovery/sync
+      - 22000:22000/udp # Syncthing discovery/sync
+      - 21027:21027/udp # Local discovery
+    restart: unless-stopped
