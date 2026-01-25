@@ -9,6 +9,10 @@ _Required:_ Make sure you know:
 - Your appdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
 - Your dockerdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
 
+## Syncthing Local Side
+- Go to [syncthing.net](https://syncthing.net/) and download/install the version matching your machine
+- You will be able to run syncthing and access the web gui via [http://127.0.0.1:8384/](http://127.0.0.1:8384/)
+
 ## Compose File
 - Services > Compose > Add > Add from Example > Find syncthing
 - This directory has an example compose file as well
@@ -26,7 +30,35 @@ _Required:_ Make sure you know:
 
 ## Access
 - Use the local IP (or the tailscale IP if you have it up), and append :8384 in your browser search bar and launch
-- The web gui should launch
+- The web gui for the pi server instance of syncthing should launch
 
 ## Syncthing Setup
-- TODO
+- Launch the web gui for both the pi server instance and the local instance
+- Go to Actions > Settings > General (starting tab)
+  - Edit the device names for each to differentiate them
+  - You can disable Anonymous Usage Reporting here if you want
+  - Edit Folder Defaults
+    - General tab
+      - set your path to the folder(s) to sync
+        - Ex. Local I set to a folder in my Docs
+        - Ex. Pi Server I set to the /data path I created in the compose
+    - File Versioning tab
+      - Set to how you like. I did:
+        - Simple File Versioning
+        - Keep 5 Versions
+    - Save
+  - GUI tab
+    - Adjust GUI username and password for both instances
+  - Connections tab
+    - Uncheck all the boxes: Enable NAT traversal, Global Discovery, Local Discovery and Enable Relaying
+  - Save
+
+- (Optional?) Go to Actions > Advanced > Options
+  - announceLANAddresses - uncheck
+  - Auto Upgrade Interval (hours) - set to 0
+  - Crash Reporting Enabled - uncheck
+  - Releases URL - clear out (to upgrade Syncthing, you will have to manually replace the executable and restart syncthing)
+- Actions > Advanced > Devices
+  - Allowed Networks - limit to <pi IP>/24
+- Actions > Advanced > Defaults > Default Device
+  - Allowed Networks - Set to <pi IP>/24
