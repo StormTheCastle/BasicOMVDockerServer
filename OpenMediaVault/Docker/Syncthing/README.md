@@ -62,3 +62,12 @@ _Required:_ Make sure you know:
   - Allowed Networks - limit to <pi IP>/24
 - Actions > Advanced > Defaults > Default Device
   - Allowed Networks - Set to <pi IP>/24
+
+## Connecting Local and Server
+- Add Remote Device
+- Plug in the ID of the other machine found via Actions > Show ID
+- (Opt.) In the Sharing tab, you can check "Introducer" to automatically add devices from the Introducer to our device list (for mutually shared folders)
+- (Opt.) In the Advanced tab, you can check "Untrusted" if you want all folders shared with this device to be protected by a password, such that all sent data is unreadable without the given password.
+- Save
+
+- 
