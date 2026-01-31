@@ -50,24 +50,38 @@ _Required:_ Make sure you know:
   - GUI tab
     - Adjust GUI username and password for both instances
   - Connections tab
-    - Uncheck all the boxes: Enable NAT traversal, Global Discovery, Local Discovery and Enable Relaying
+    - Uncheck the boxes: Enable NAT traversal, Global Discovery, and Enable Relaying
+    - Keep Local Discovery On
   - Save
 
 - (Optional?) Go to Actions > Advanced > Options
-  - announceLANAddresses - uncheck
   - Auto Upgrade Interval (hours) - set to 0
   - Crash Reporting Enabled - uncheck
   - Releases URL - clear out (to upgrade Syncthing, you will have to manually replace the executable and restart syncthing)
 - Actions > Advanced > Devices
-  - Allowed Networks - limit to <pi IP>/24
+  - Allowed Networks - limit to <pi IP>.0.0/24 (Ex. 192.168.0.0/24)
 - Actions > Advanced > Defaults > Default Device
-  - Allowed Networks - Set to <pi IP>/24
+  - Allowed Networks - Set to <pi IP>.0.0/24 (Ex. 192.168.0.0/24)
 
 ## Connecting Local and Server
 - Add Remote Device
-- Plug in the ID of the other machine found via Actions > Show ID
+- You can either select the nearby device ID that shows up or plug in the ID of the other machine found via Actions > Show ID
 - (Opt.) In the Sharing tab, you can check "Introducer" to automatically add devices from the Introducer to our device list (for mutually shared folders)
+  - Ie. When adding a third machine, you can set "Introducer" when connecting to one of the other machines to get both
 - (Opt.) In the Advanced tab, you can check "Untrusted" if you want all folders shared with this device to be protected by a password, such that all sent data is unreadable without the given password.
 - Save
 
-- 
+## Local File Share
+- From the local machine that will be making the changes to save to the server, click "Add Folder"
+- Set your Folder Path to the folder that should be synced
+- Under Sharing, select the device to share to
+- Under File Versioning, turn off File Versioning (you will be making the changes and don't need versions)
+- (Opt.) Under the Advanced tab, you can decide whether the folder will be Send and Receive or just one of them
+- Save
+- In the server device, a new option should show up to accept the shared folder. Accept it and set the folder path
+  - You can double-check the Sharing and File Versioning tabs, but we should be able to save as-is
+  - (Opt.) Under the Advanced tab, you can decide whether the folder will be Send and Receive or just one of them
+
+## Testing
+- Add a file in one of the synced folders
+- You should see it sync
