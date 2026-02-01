@@ -52,7 +52,7 @@ _Required:_ Make sure you know:
     - Keep Local Discovery On
   - Save
 
-- (Optional?) Go to Actions > Advanced > Options
+- Go to Actions > Advanced > Options
   - Auto Upgrade Interval (hours) - set to 0
   - Crash Reporting Enabled - uncheck
   - Releases URL - clear out (to upgrade Syncthing, you will have to manually replace the executable and restart syncthing)
