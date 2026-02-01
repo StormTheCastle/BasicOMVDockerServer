@@ -1,0 +1,35 @@
+---
+# Date: 2025-06-01
+# https://hub.docker.com/r/pihole/pihole
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    networks:
+      pihole-network:
+        ipv4_address: <TODO macvlan ip>
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    ports:
+      - "53:53/tcp"      # DNS Ports
+      - "53:53/udp"      # DNS Ports
+      - "8080:80/tcp"    # Default HTTP Port "80:80/tcp" We change to 8080 so it doesn't conflict with default OMV nor default nginx-proxy-manager
+      - "4443:443/tcp"   # Default HTTPs Port. FTL will generate a self-signed certificate "443:443/tcp". We change to 4443 to not conflict with other defaults
+      #- "67:67/udp"     # Uncomment this line if you are using Pi-hole as your DHCP server
+      #- "123:123/udp"   # Uncomment the line below if you are using Pi-hole as your NTP server
+    environment:
+      PUID: <TODO user ID>     # ID Appuser
+      PGID: <TODO group ID>      # Group ID
+      TZ: 'America/Chicago'
+      FTLCONF_webserver_api_password: '<TODO password>' #'set a secure password here or it will be random'
+    volumes:
+      - <TODO filepath>/pihole/etc-pihole:/etc/pihole
+      - <TODO filepath>/pihole/etc-dnsmasq.d:/etc/dnsmasq.d
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    #cap_add:
+      #- NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+    restart: unless-stopped
+networks:
+  pihole-network:
+    name: pihole-network
+    external: true
