@@ -1,13 +1,11 @@
-# Pihole Container
+# Pihole (and nginx-proxy-manager) Container
 
 _Required:_ Make sure you know:
-- Your timezone marker
-- Your network user 
-- Your appdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
-- Your dockerdata absolute filepath (from Storage > Shared Folders > Absolute Path column)
+- Your pihole user 
+- Your data absolute filepath (from Storage > Shared Folders > Absolute Path column)
 
 _Required:_
-- Assign a static address for your pihole through the router
+- Assign a static address for your pihole through your router
 
 ## Changing Ports
 - If you want to use pihole to do local domain name stuff, you will also need to adjust some ports
