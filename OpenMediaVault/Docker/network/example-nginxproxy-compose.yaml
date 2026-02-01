@@ -1,0 +1,28 @@
+---
+# Date: 2025-06-01
+# https://github.com/NginxProxyManager/nginx-proxy-manager
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    environment:
+      - PUID=<TODO user ID>
+      - PGID=<TODO group ID>
+      - TZ=America/Chicago
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '80:80' # Public HTTP Port
+      - '443:443' # Public HTTPS Port
+      - '81:81' # Admin Web Port
+      # Add any other Stream port you want to expose
+      # - '21:21' # FTP
+    volumes:
+      - <TODO filepath>/nginxproxymanager/data:/data # BACKUP
+      - <TODO filepath>/nginxproxymanager/letsencrypt:/etc/letsencrypt # BACKUP
+####
+#
+#     Default Administrator User login:
+#     Email:    admin@example.com
+#     Password: changeme
+#
+####
