@@ -29,9 +29,9 @@ _Required:_ Make sure you know:
 - During first-time setup, you should do the steps in the "Run" section below. Other times, just clicking the "Up" button at this point is enough
 
 ## Run
-- SSH into pi and run the following command:
-  - First time: `sudo docker exec -it tailscale tailscale up --advertise-exit-node`
-  - Subsequent updates: `sudo docker exec -it tailscale tailscale up --reset --advertise-exit-node`
+- SSH into pi and run the following command (replacing "tailscale-pi" with the container name you listed in the compose file):
+  - First time: `sudo docker exec -it tailscale-pi tailscale up --advertise-exit-node`
+  - Subsequent updates: `sudo docker exec -it tailscale-pi tailscale up --reset --advertise-exit-node`
   
 You can add --exit-node-allow-lan-access=true so if you are doing tailscale on computer and want to access to local
 
