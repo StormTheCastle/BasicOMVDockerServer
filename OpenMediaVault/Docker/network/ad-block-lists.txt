@@ -1,0 +1,17 @@
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
+https://raw.githubusercontent.com/mhhakim/pihole-blocklist/master/porn.txt
+https://raw.githubusercontent.com/austinheap/sophos-xg-block-lists/master/coinblocker.txt
+https://raw.githubusercontent.com/austinheap/sophos-xg-block-lists/master/malware-domain-list.txt
+https://raw.githubusercontent.com/austinheap/sophos-xg-block-lists/master/nocoin.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
+https://www.github.developerdan.com/hosts/lists/amp-hosts-extended.txt
+https://www.github.developerdan.com/hosts/lists/dating-services-extended.txt
+https://www.github.developerdan.com/hosts/lists/hate-and-junk-extended.txt
+https://www.github.developerdan.com/hosts/lists/tracking-aggressive-extended.txt
+https://big.oisd.nl
+https://nsfw.oisd.nl
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/pro.plus.txt
+https://raw.githubusercontent.com/spmedia/Crypto-Scam-and-Crypto-Phishing-Threat-Intel-Feed/refs/heads/main/detected_urls.txt
+https://www.github.developerdan.com/hosts/lists/facebook-extended.txt     Disable
