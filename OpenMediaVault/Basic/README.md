@@ -3,6 +3,8 @@ This follows along [OMV's new user guide](https://wiki.omv-extras.org/doku.php?i
 
 Reminder: You should have your pi's IP address (something like 192.168.XXX.XXX) and the OpenMediaVault default user and password (admin/openmediavault).
 
+'Recommended:' In your router, assign a permanent IP address for your pi. This will make it easier to access as you log in and out.
+
 1. Launch the OMV web console and log in
 2. Using the person icon in the top right, change the password to something more secure.
 3. Go down through the System Settings.
