@@ -1,7 +1,5 @@
 # Syncthing Container
 
-TODO: under construction
-
 _Required:_ Make sure you know:
 - Your container user's PUID
 - Your associated group GID (or user PGID)
