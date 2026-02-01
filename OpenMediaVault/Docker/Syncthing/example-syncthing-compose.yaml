@@ -12,7 +12,8 @@ services:
       - TZ=<TODO timezone ex. America/Chicago>
     volumes:
       - /<TODO dockerappconfig path>/syncthing/config:/config
-      - /<TODO dockerdata path>/media:/mediadata    # point to whatever data you want
+      # point to whatever data you want. (Opt.) The backup marker will make sure the data is backed up per the compose schedule updates build
+      - /<TODO dockerdata path>/media:/mediadata    # BACKUP
       - /<TODO dockerdata path>/syncdata:/syncdata  # optional - point to whatever data you want
     ports:
       - 8384:8384    # Web UI
