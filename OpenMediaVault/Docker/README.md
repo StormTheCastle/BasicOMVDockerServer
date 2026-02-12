@@ -52,13 +52,13 @@ Used for determining access. Users > Users/Groups. For each of your containers/s
 
 _Note:_ Before starting, click the little grid/table by the search and make sure the UID/GID are visible. Keep track of user UID and group GID. (If you aren't doing anything with groups, the default "users" GUID should be used, which will probably be "100")
 	
-1. Create the users and groups and assign the correct permissions. Ex. Create a user "jellyfin"
+1. Create the users and groups and assign the correct permissions. Ex. Create a user "appuser"
    - Add password
    - Shell: /usr/sbin/nologin
    - Groups: Users
    - Disallow account modification
    - Save/Apply
-2. Repeat the above for however many users you need.
+2. Repeat the above for however many users you need. *Note!*: If you want to ensure total discretion between users, we don't want them in the users group. In the command line, make each new user by calling `sudo useradd -U <name>` or, ex. `sudo useradd -U jellyfin`
 3. For each, click on row and click the folder/"shared folder permissions" and allow read/write access to the shared folders they should be allowed in.
 (This can also be done in Storage > Shared Folders and clicking the folder/"shared folder permissions")
    - Usually dockerappconfig and dockerdata (or the subfolder)
