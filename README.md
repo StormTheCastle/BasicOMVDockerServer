@@ -41,3 +41,12 @@ You can now move onto setting up OMV and Docker. OMV provides a [new user guide]
 1. [Basic Start](OpenMediaVault/Basic/README.md)
 2. [Docker](OpenMediaVault/Docker/README.md)
    - This will aggregate steps for setting up Docker along with some containers for things like tailscale and jellyfin. These also will exist as solo sub-options if preferred.
+
+## Auto Updates
+1. Manual: System > Update Management > Updates > Install Updates
+OR
+2. System > Scheduled Tasks > 
+   1. Certain Date - Set an hour - switch to Monthly - /usr/sbin/omv-backup
+   2. Certain Date - Set a different hour - switch to daily/weekly - omv-upgrade && omv-rpc -u admin "config" "applyChanges" "{ \"modules\": $(cat /var/lib/openmediavault/dirtymodules.json), \"force\": true }" 2>/dev/null; if [ -f "/var/run/reboot-required" ]; then reboot; fi
+
+3. Services > Compose > Schedule - separate update/prune images to daily and backup to monthly
